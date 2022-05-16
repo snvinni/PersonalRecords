@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Personal Records</string>
+
+    <string name="ERROR_UNEXPECTED">Um erro inesperado ocorreu. Tente novamente mais tarde.</string>
+
+    <string name="email">E-mail</string>
+    <string name="senha">Senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="nao_tem_uma_conta">Não tem uma conta ?</string>
+    <string name="cadastre_se">Cadastre-se</string>
+    <string name="name">Nome</string>
+    <string name="password">Senha</string>
+    <string name="register">Cadastrar</string>
+    <string name="personal_records">Personal Records</string>
+    <string name="add_exercise">Adicionar Exercício</string>
+    <string name="exercise_name">Nome do exercício</string>
+    <string name="record">Seu record</string>
+    <string name="number_repetitions">Número de Repetições</string>
+    <string name="time">Tempo(min,sec)</string>
+    <string name="weight">Peso(Lbs)</string>
+    <string name="not_repetitions">Não possuí numero de repetições</string>
+    <string name="data">Data</string>
+    <string name="pickData">Selecione a data: dd/mm/yyyy</string>
+    <string name="cancel">Cancelar</string>
+    <string name="save">Salvar</string>
+    <string name="measurement">lbs</string>
+    <string name="leave">Sair</string>
+    <string name="lbs">Libras</string>
+    <string name="kgs">Quilogramas</string>
+    <string name="unit">Selecione a unidade de medida:</string>
+</resources>
