@@ -18,7 +18,7 @@ class AddExerciseViewModel @Inject constructor(private val recordRepository: Rec
     fun save(
         id: Int,
         exerciseName: String,
-        exerciseRecord: Int,
+        exerciseRecord: Double,
         haveRepetitions: String,
         date: String,
         measurement: String,
@@ -35,7 +35,7 @@ class AddExerciseViewModel @Inject constructor(private val recordRepository: Rec
 
             }
 
-            if (id == 0 && exerciseName != "" && exerciseRecord != 0) {
+            if (id == 0 && exerciseName != "" && exerciseRecord != 0.0) {
                 saveRecord.value = recordRepository.save(record)
             } else {
                 saveRecord.value = recordRepository.update(record)

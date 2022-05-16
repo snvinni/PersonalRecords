@@ -14,7 +14,7 @@ data class RecordModel(
     var exerciseName: String = "",
 
     @ColumnInfo(name = "exerciseRecord")
-    var exerciseRecord: Int = 0,
+    var exerciseRecord: Double = 0.0,
 
     @ColumnInfo(name = "haveRepetitions")
     var haveRepetitions: String = "",

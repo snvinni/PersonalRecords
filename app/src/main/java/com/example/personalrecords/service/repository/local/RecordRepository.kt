@@ -23,4 +23,7 @@ class RecordRepository @Inject constructor (private val recordDAO: RecordDAO) {
     fun resetRecords() {
         return recordDAO.resetRecord()
     }
+    fun setRecords(record: List<RecordModel>) {
+        return recordDAO.setRecords(record)
+    }
 }

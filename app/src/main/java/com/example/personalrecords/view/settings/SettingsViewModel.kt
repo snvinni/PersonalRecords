@@ -23,23 +23,23 @@ class SettingsViewModel @Inject constructor(
     fun convertLbsToKgs(
         recordKgs: Boolean
     ) {
-        var exerciseRecord = 0
+        var exerciseRecord = 1.0
         if (recordKgs) {
-            exerciseRecord += 1
+            exerciseRecord *= 2.2046
         }
-        val record = RecordModel().apply {
-            this.exerciseRecord = exerciseRecord
+        val record = recordRepository.getRecord().onEach {
+            it.exerciseRecord = exerciseRecord
         }
-            saveRecord.value = recordRepository.save(record).toString()
+        saveRecord.value = recordRepository.setRecords(record).toString()
 
     }
 
     fun logOut() {
-            sharedPreferences.remove(RecordConstants.SHARED.PERSON_KEY)
-            sharedPreferences.remove(RecordConstants.SHARED.TOKEN_KEY)
-            sharedPreferences.remove(RecordConstants.SHARED.PERSON_NAME)
-            recordRepository.resetRecords()
+        sharedPreferences.remove(RecordConstants.SHARED.PERSON_KEY)
+        sharedPreferences.remove(RecordConstants.SHARED.TOKEN_KEY)
+        sharedPreferences.remove(RecordConstants.SHARED.PERSON_NAME)
+        recordRepository.resetRecords()
 
-            logOut.value = true
-        }
+        logOut.value = true
     }
+}

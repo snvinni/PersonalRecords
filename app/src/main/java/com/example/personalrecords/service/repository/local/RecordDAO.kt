@@ -10,6 +10,9 @@ interface RecordDAO {
     fun save(record: RecordModel) : Long
 
     @Update
+    fun setRecords(records: List<RecordModel>)
+
+    @Update
     fun update(record: RecordModel) : Int
 
     @Delete
