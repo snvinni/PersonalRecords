@@ -69,6 +69,7 @@ class AddExerciseActivity : AppCompatActivity() {
             val stringExerciseRecord = binding.editExerciseRecord.text.toString()
             val exerciseRecord = stringExerciseRecord.toDouble()
             val date = binding.editDate.text.toString()
+            val exerciseRecordKgs = exerciseRecord / 2
 
             addExerciseViewModel.save(
                 recordId,
@@ -77,8 +78,9 @@ class AddExerciseActivity : AppCompatActivity() {
                 haveRepetitions(),
                 date,
                 setMeasurement(),
-                repetition()
-            )
+                repetition(),
+                exerciseRecordKgs,
+                )
         }
 
         binding.buttonCancel.setOnClickListener {

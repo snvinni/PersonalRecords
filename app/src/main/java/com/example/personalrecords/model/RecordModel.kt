@@ -1,7 +1,9 @@
 package com.example.personalrecords.model
 
+import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "Record")
@@ -16,6 +18,9 @@ data class RecordModel(
     @ColumnInfo(name = "exerciseRecord")
     var exerciseRecord: Double = 0.0,
 
+    @ColumnInfo(name = "exerciseRecordKgs")
+    var exerciseRecordKgs: Double = 0.0,
+
     @ColumnInfo(name = "haveRepetitions")
     var haveRepetitions: String = "",
 
@@ -28,3 +33,4 @@ data class RecordModel(
     @ColumnInfo(name = "repetition")
     var repetition: String = ""
 )
+

@@ -23,6 +23,7 @@ class AddExerciseViewModel @Inject constructor(private val recordRepository: Rec
         date: String,
         measurement: String,
         repetition: String,
+        exerciseRecordKgs: Double
     ) {
             val record = RecordModel().apply {
                 this.id = id
@@ -32,7 +33,7 @@ class AddExerciseViewModel @Inject constructor(private val recordRepository: Rec
                 this.date = date
                 this.measurement = measurement
                 this.repetition = repetition
-
+                this.exerciseRecordKgs = exerciseRecordKgs
             }
 
             if (id == 0 && exerciseName != "" && exerciseRecord != 0.0) {

@@ -24,8 +24,8 @@ class SettingsActivity : AppCompatActivity() {
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.radioLbs.isChecked = false
-        binding.radioKgs.isChecked = true
+        binding.radioLbs.isChecked = true
+        binding.radioKgs.isChecked = false
 
         binding.buttonLogout.setOnClickListener {
             settingsViewModel.logOut()
@@ -46,8 +46,6 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         })
-
-        //settingsViewModel.convertLbsToKgs
 
     }
 

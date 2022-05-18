@@ -1,7 +1,9 @@
 package com.example.personalrecords.service.repository.local
 
+import androidx.lifecycle.MutableLiveData
 import androidx.room.*
 import com.example.personalrecords.model.RecordModel
+
 
 @Dao
 interface RecordDAO {
@@ -10,7 +12,7 @@ interface RecordDAO {
     fun save(record: RecordModel) : Long
 
     @Update
-    fun setRecords(records: List<RecordModel>)
+    fun convertRecords(record: List<RecordModel>)
 
     @Update
     fun update(record: RecordModel) : Int
@@ -20,6 +22,9 @@ interface RecordDAO {
 
     @Query("DELETE FROM Record")
     fun resetRecord()
+
+    @Query("SELECT * FROM record ")
+    fun getExerciseRecord(): List<RecordModel>
 
     @Query("SELECT * FROM Record WHERE id = :id")
     fun get(id: Int) : RecordModel

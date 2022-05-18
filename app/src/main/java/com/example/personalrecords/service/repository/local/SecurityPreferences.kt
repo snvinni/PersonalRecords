@@ -24,5 +24,11 @@ class SecurityPreferences @Inject constructor(context: Context) {
     fun get(key: String): String {
         return preferences.getString(key, "") ?: ""
     }
+    fun setRecordType(isLbs: Boolean) {
+         preferences.edit().putBoolean("isLbs", isLbs).apply()
+    }
+    fun getRecordType(): Boolean {
+        return preferences.getBoolean("isLbs", false)
+    }
 
 }
