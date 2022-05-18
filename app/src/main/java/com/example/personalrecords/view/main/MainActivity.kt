@@ -36,7 +36,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.settingsButton.setOnClickListener {
-            startActivity(Intent(this, SettingsActivity::class.java ))
+            val intent = Intent(this, SettingsActivity::class.java)
+            intent.putExtra("test", 33)
+            startActivity(intent)
         }
 
         binding.recylerRecords.layoutManager = LinearLayoutManager(applicationContext)

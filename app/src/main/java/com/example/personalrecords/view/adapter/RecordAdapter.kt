@@ -37,6 +37,7 @@ class RecordAdapter : ListAdapter<RecordModel, RecordAdapter.ViewHolder>(diffCal
             textRepetitions.text = record.haveRepetitions
             textMeasurement.text = record.measurement
             textRepetition.text = record.repetition
+            textKgs.text = record.exerciseRecordKgs.toString()
 
             textExerciseName.setOnClickListener {
                 onItemClickedListener?.onCLicked(record.id)
@@ -77,5 +78,4 @@ class RecordAdapter : ListAdapter<RecordModel, RecordAdapter.ViewHolder>(diffCal
 
         }
     }
-
 }

@@ -20,26 +20,17 @@ class SettingsViewModel @Inject constructor(
     var record = MutableLiveData<RecordModel>()
     var logOut = MutableLiveData<Boolean>()
 
-    fun convertLbsToKgs(
-        recordKgs: Boolean
-    ) {
-        var exerciseRecord = 0
-        if (recordKgs) {
-            exerciseRecord += 1
-        }
-        val record = RecordModel().apply {
-            this.exerciseRecord = exerciseRecord
-        }
-            saveRecord.value = recordRepository.save(record).toString()
-
+    fun convertLbsToKgs(recordKgs: Boolean) {
+        recordRepository.setRecordType(!recordKgs)
     }
+
 
     fun logOut() {
-            sharedPreferences.remove(RecordConstants.SHARED.PERSON_KEY)
-            sharedPreferences.remove(RecordConstants.SHARED.TOKEN_KEY)
-            sharedPreferences.remove(RecordConstants.SHARED.PERSON_NAME)
-            recordRepository.resetRecords()
+        sharedPreferences.remove(RecordConstants.SHARED.PERSON_KEY)
+        sharedPreferences.remove(RecordConstants.SHARED.TOKEN_KEY)
+        sharedPreferences.remove(RecordConstants.SHARED.PERSON_NAME)
+        recordRepository.resetRecords()
 
-            logOut.value = true
-        }
+        logOut.value = true
     }
+}
