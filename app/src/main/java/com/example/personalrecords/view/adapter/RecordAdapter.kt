@@ -3,6 +3,7 @@ package com.example.personalrecords.view.adapter
 import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -37,7 +38,7 @@ class RecordAdapter : ListAdapter<RecordModel, RecordAdapter.ViewHolder>(diffCal
             textRepetitions.text = record.haveRepetitions
             textMeasurement.text = record.measurement
             textRepetition.text = record.repetition
-            textKgs.text = record.exerciseRecordKgs.toString()
+            //textKgs.text = record.exerciseRecordKgs.toString()
 
             textExerciseName.setOnClickListener {
                 onItemClickedListener?.onCLicked(record.id)

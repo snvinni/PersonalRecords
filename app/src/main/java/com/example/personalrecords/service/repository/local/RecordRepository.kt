@@ -1,7 +1,9 @@
 package com.example.personalrecords.service.repository.local
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.personalrecords.model.RecordModel
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class RecordRepository @Inject constructor (
@@ -34,10 +36,13 @@ class RecordRepository @Inject constructor (
     fun convertRecords(record: List<RecordModel>) {
         return recordDAO.convertRecords(record)
     }
-    fun getExerciseRecord(): Boolean {
+    private fun getExerciseRecord(): Boolean {
         return securityPreferences.getRecordType()
     }
     fun setRecordType(isLbs: Boolean) {
         securityPreferences.setRecordType(isLbs)
+    }
+    fun getExerciseRecords(): Flow<List<RecordModel>> {
+        return recordDAO.getExerciseRecords()
     }
 }

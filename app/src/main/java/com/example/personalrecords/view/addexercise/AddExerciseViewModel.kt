@@ -25,26 +25,26 @@ class AddExerciseViewModel @Inject constructor(private val recordRepository: Rec
         repetition: String,
         exerciseRecordKgs: Double
     ) {
-            val record = RecordModel().apply {
-                this.id = id
-                this.exerciseName = exerciseName
-                this.exerciseRecord = exerciseRecord
-                this.haveRepetitions = haveRepetitions
-                this.date = date
-                this.measurement = measurement
-                this.repetition = repetition
-                this.exerciseRecordKgs = exerciseRecordKgs
-            }
+        val record = RecordModel().apply {
+            this.id = id
+            this.exerciseName = exerciseName
+            this.exerciseRecord = exerciseRecord
+            this.haveRepetitions = haveRepetitions
+            this.date = date
+            this.measurement = measurement
+            this.repetition = repetition
+            this.exerciseRecordKgs = exerciseRecordKgs
+        }
 
-            if (id == 0 && exerciseName != "" && exerciseRecord != 0.0) {
-                saveRecord.value = recordRepository.save(record)
-            } else {
-                saveRecord.value = recordRepository.update(record)
-            }
+        if (id == 0 && exerciseName != "" && exerciseRecord != 0.0) {
+            saveRecord.value = recordRepository.save(record)
+        } else {
+            saveRecord.value = recordRepository.update(record)
+        }
     }
 
     fun load(id: Int) {
-        record.value = recordRepository.get(id)
+        val response = recordRepository.get(id)
+        record.value = response
     }
-
 }
